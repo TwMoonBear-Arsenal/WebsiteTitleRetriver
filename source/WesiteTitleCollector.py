@@ -22,13 +22,17 @@ def Retrive(input_file_path):
 def main():
 
     # 準備參數解析
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="依給定網址清單抓取網頁標頭")
     parser.add_argument("input_file_path", help="包含連結網址之文字檔案，各網址獨立一行",
                         type=str, )
     args = parser.parse_args()
 
     # 執行函數
     Retrive(args.input_file_path)
+
+    # end
+    print("程式執行完畢")
+    print()
 
 
 if __name__ == "__main__":
