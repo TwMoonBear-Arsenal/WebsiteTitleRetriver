@@ -22,7 +22,9 @@ def Retrive(input_file_path):
 def main():
 
     # 準備參數解析
-    parser = argparse.ArgumentParser(description="依給定網址清單抓取網頁標頭")
+    example_text = "example usage: py.exe .\WebsiteTitleRetriver.py example_url_list.txt"
+    parser = argparse.ArgumentParser(
+        description="依給定網址清單抓取網頁標頭", epilog=example_text)
     parser.add_argument("input_file_path", help="包含連結網址之文字檔案，各網址獨立一行",
                         type=str, )
     args = parser.parse_args()
