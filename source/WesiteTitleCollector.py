@@ -6,13 +6,17 @@ from bs4 import BeautifulSoup  # from pypi
 def Retrive(input_file_path):
     with open(input_file_path, 'r', encoding='UTF-8') as file:
         for url in file:
-            print(url)
-            # 開啟網頁
-            response = urllib.request.urlopen(url)
-            # 解析網頁
-            soup = BeautifulSoup(response, features="html.parser")
-            # 列印網頁標題
-            print(soup.title.string)
+            try:
+                # 去除斷行字元
+                url = url.replace("\n", " ")
+                # 開啟網頁
+                response = urllib.request.urlopen(url)
+                # 解析網頁
+                soup = BeautifulSoup(response, features="html.parser")
+                # 列印網頁標題
+                print(url + ': ' + soup.title.string)
+            except Exception as e:
+                print(url + ':', e)
 
 
 def main():
@@ -24,8 +28,7 @@ def main():
     args = parser.parse_args()
 
     # 執行函數
-    ans = add(args.input_file_path)
-    print(ans)
+    Retrive(args.input_file_path)
 
 
 if __name__ == "__main__":

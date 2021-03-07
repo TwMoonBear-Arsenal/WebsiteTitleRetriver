@@ -1,0 +1,6 @@
+https://www.google.com/
+https://tw.yahoo.com/
+8.8.8.8
+https://8.8.8.8/
+http://192.168.0.1/
+http://192.168.1.1/
