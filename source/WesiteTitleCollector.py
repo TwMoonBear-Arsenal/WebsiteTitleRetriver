@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup  # from pypi
 def Retrive(input_file_path):
     with open(input_file_path, 'r', encoding='UTF-8') as file:
         for url in file:
-            print url
+            print(url)
             # 開啟網頁
             response = urllib.request.urlopen(url)
             # 解析網頁
